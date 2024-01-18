@@ -2,10 +2,10 @@
 function sendEmail($to, $subject, $message, $cc = "", $attach = "") {
     $config = [
         "protocol" => "smtp",
-        "smtp_host" => "smtp.hostinger.com",
+        "smtp_host" => "Server Host",
         "smtp_port" => 465,
-        "smtp_user" => "developers@keywordhike.com",
-        "smtp_pass" => "DevelopersTeam@#2023",
+        "smtp_user" => "SMTP Username",
+        "smtp_pass" => "SMTP Password",
         "smtp_crypto" => "ssl",
         "mailtype" => "html",
         "crlf" => "\r\n",
