@@ -1,0 +1,55 @@
+   <form action="" id="contactForm" method="POST">
+ 
+
+    <input type="text" id="name" name="name" placeholder="Name" required="">
+
+    <input type="email" id="email" name="email" placeholder="Email" required="">
+
+    <input type="tel" id="contact" name="contact" placeholder="Contact Number" required="">
+
+    <textarea id="message" name="message" rows="3" placeholder="Message" required=""></textarea>
+	
+	    <p id="confirmationMsg"></p>
+
+    <button type="button" name="popup_submit" id="submitBtn" >Submit</button>
+</form>
+
+
+
+<script>
+$(document).ready(function () {
+   $("#submitBtn").click(function () {
+      if (validateForm()) {
+         var formData = $("#contactForm").serialize();
+         $.ajax({
+            type: "POST",
+            url: "",
+            data: formData,
+            success: function (response) {
+               $("#confirmationMsg").text(response);
+               setTimeout(function () {
+                  closePopup();
+                   window.location.href = "";
+               }, 2000);
+            },
+            error: function () {
+               $("#confirmationMsg").text("Error: Unable to submit the form.");
+               setTimeout(function () {
+               }, 2000);
+            }
+
+         });
+
+      }
+   });
+   function validateForm() {
+      var name = $("#name").val();
+      var email = $("#email").val();
+      if (name.trim() === "" || email.trim() === "") {
+         $("#confirmationMsg").text("Please fill in all required fields.");
+         return false;
+      }
+      return true;
+   }
+});
+</script>
