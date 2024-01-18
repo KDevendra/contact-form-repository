@@ -1,12 +1,12 @@
-<?php
+er<?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     include "mail.php";
     $name = $_POST["name"];
     $email = $_POST["email"];
     $contact = $_POST["contact"];
     $message = $_POST["message"];
-    $to = "enquiry@studyberg.com"; 
-    $subject = "Study In UK Enquiry From Google Ads";
+    $to = "enter receiver email address"; 
+    $subject = "Enter Your Subject here.....";
     $cc = ""; 
     $attach = ""; 
      $emailMessage = "
