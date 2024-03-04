@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $contact = $_POST["contact"];
     $message = $_POST["message"];
     $to = "enter receiver email address"; 
-    $subject = "Enter Your Subject here.....";
+    $subject = $_POST["email_subject"];
     $cc = ""; 
     $attach = ""; 
      $emailMessage = "
